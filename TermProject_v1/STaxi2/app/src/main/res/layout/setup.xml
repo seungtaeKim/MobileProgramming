@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/ver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Ver                                                                                             >"/>
+    <Button
+        android:id="@+id/notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Notice                                                                                      >"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FF8C00"/>
+    <Button
+        android:id="@+id/userdb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="User database                                                                     >"/>
+    <Button
+        android:id="@+id/driverdb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Driver database                                                                 >"/>
+    <Button
+        android:id="@+id/boarddb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Board database                                                                  >"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FF8C00"/>
+    <Button
+        android:id="@+id/alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Alert Setting                                                                      >"/>
+    <Button
+        android:id="@+id/log_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Log out                                                                                    >"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="57dp"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+        <Button
+            android:id = "@+id/Location"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight ="1"
+            android:background="@drawable/location"/>
+        <Button
+            android:id="@+id/Driver"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight ="1"
+            android:background="@drawable/driver"/>
+        <Button
+            android:id="@+id/Fare"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight ="1"
+            android:background="@drawable/fare"/>
+        <Button
+            android:id="@+id/Notice_board"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight ="1"
+            android:background="@drawable/notice_board"/>
+        <Button
+            android:id="@+id/Set_up"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight ="1"
+            android:background="@drawable/set_up"/>
+    </LinearLayout>
+</LinearLayout>
