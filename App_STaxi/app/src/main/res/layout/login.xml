@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FF8C00"
+    tools:context="com.example.gywou.app_staxi.MainActivity">
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:src="@drawable/staxi"
+        android:layout_marginTop="70dp"/>
+
+    <Button android:id="@+id/login_google"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@drawable/google"
+        android:layout_marginTop="80dp" />
+
+    <Button android:id="@+id/login_facebook"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@drawable/facebook"
+        android:layout_marginTop="7dp" />
+</LinearLayout>
