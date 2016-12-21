@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
@@ -18,55 +17,45 @@ import android.widget.Toast;
 
 import java.sql.Driver;
 import java.sql.SQLException;
-import java.util.ArrayList;
-
-/**
- * Created by gywou on 2016-12-20.
- */
 
 public class DriverActivity extends AppCompatActivity{
     private String origin, destination;// 출발지점, 도착지점 변수
+    private String message;
     private double distance;// 거리 변수
     private double pay = 0;
     private int pay2 = 0;
-
-    private DbOpenHelper mDbOpenHelper;
-    private Cursor mCursor;
-
     TextView pick_up, drop_off, dis, fee;
     TextView driverInfo;
-
-
+    private DbOpenHelper mDbOpenHelper;
+    private Cursor mCursor;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.driver);
 
+        driverInfo = (TextView) findViewById(R.id.driverInfo);
         Intent intent6 = getIntent();                            //intent 객체 생성
         distance = intent6.getDoubleExtra("distance", 0);
         origin = intent6.getStringExtra("origin");              //origin에 인텐트 값을 받아 저장
         destination = intent6.getStringExtra("destination");
 
-        driverInfo = (TextView) findViewById(R.id.driverInfo);
+        //데이터베이스 생성(파라메터 Context) 및 오픈
+        mDbOpenHelper = new DbOpenHelper(this);
+        try {
+            mDbOpenHelper.open();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+        mCursor = null;
+        mCursor = mDbOpenHelper.getAllColumns();  // DB에 있는 모든 컬럼을 가져옴
 
-            //데이터베이스 생성(파라메터 Context) 및 오픈
-            mDbOpenHelper = new DbOpenHelper(this);
-            try {
-                mDbOpenHelper.open();
-            } catch (SQLException e) {
-                e.printStackTrace();
+        while(mCursor.moveToNext()){
+            if(mCursor.getString(3).equals(origin)){
+                driverInfo.setText("name : " + mCursor.getString(1) + "\nTell : " + mCursor.getString(2) + "\nLocation : " + mCursor.getString(3));
+                break;
             }
-
-            mCursor = null;
-            mCursor = mDbOpenHelper.getAllColumns();  // DB에 있는 모든 컬럼을 가져옴
-
-            while(mCursor.moveToNext()){
-                if(mCursor.getString(3).equals(origin)){
-                    driverInfo.setText("name : " + mCursor.getString(1) + "\nTell : " + mCursor.getString(2) + "\nLocation : " + mCursor.getString(3));
-                    break;
-                }
-            }
+        }
 
         if(distance*1000 <= 2000)       //택시 요금 계산 방법
             pay = pay2 = 3000;                 //기본요금
@@ -129,7 +118,8 @@ public class DriverActivity extends AppCompatActivity{
                 startActivity(intent5);
                 break;
             case R.id.call :
-                sendSMS("01043558948", "성공");   //문자 전송 메소드 호출
+                message = "Location : " +origin +"\n" + "Destination : " +destination;
+                sendSMS(mCursor.getString(2), message);   //문자 전송 메소드 호출
                 Intent intent6 = new Intent(DriverActivity.this, FareActivity.class);
                 intent6.putExtra("pay", pay2);
                 startActivity(intent6);

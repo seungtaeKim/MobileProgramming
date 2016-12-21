@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "599859206543",
+    "project_id": "firebase-staxi"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599859206543:android:450c56da62479e8b",
+        "android_client_info": {
+          "package_name": "com.example.gywou.app_staxi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599859206543-kthied72rm35uc6r2s4gk7o9k0ssi294.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gywou.app_staxi",
+            "certificate_hash": "159C6918393E1F5343E0D30E752F67E4AEC6E090"
+          }
+        },
+        {
+          "client_id": "599859206543-57it34rsqmhlq68454dmr7tvdr4k43g2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhmbsIpe2LceKgImQHy7SX95Ait_hB9aw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

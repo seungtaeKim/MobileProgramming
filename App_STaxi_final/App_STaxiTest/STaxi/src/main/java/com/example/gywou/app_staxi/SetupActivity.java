@@ -8,10 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-/**
- * Created by gywou on 2016-12-21.
- */
-
 public class SetupActivity extends AppCompatActivity{
     Button driver_db;
     Button ver;
@@ -49,12 +45,17 @@ public class SetupActivity extends AppCompatActivity{
                 Toast.makeText(getApplicationContext(), "STaxi_ver1.0",
                         Toast.LENGTH_LONG).show();
                 break;
+            case R.id.call_center:
+                Intent intent_call = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:010-3011-1056"));
+                startActivity(intent_call);
+                break;
+            case R.id.log_out :
+                Intent intent6 = new Intent(SetupActivity.this, MainActivity.class);
+                startActivity(intent6);
+                break;
             case R.id.notice:
                 Toast.makeText(getApplicationContext(), "Welcome STaxi Application. This helps match the taxi to you! You can use the taxi easily if you have STaxi.",
                         Toast.LENGTH_LONG).show();
-                break;
-            case R.id.call_center:
-                Intent intent_call = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:010-3011-1056"));
                 break;
             case R.id.Location:
                 Intent intent = new Intent(SetupActivity.this, LocationActivity.class);
