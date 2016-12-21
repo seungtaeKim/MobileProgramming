@@ -1,8 +1,7 @@
-package com.example.mcn.driverdbtest;
+package com.example.gywou.app_staxi;
 
 import android.app.Activity;
 import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +13,7 @@ import android.widget.Toast;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class MainActivity extends Activity {
+public class DriverDBActivity extends Activity {
 
     private static final String TAG = "TestDataBase";
     private DbOpenHelper mDbOpenHelper;
@@ -26,7 +25,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.driver_main);
 
         setLayout();
 
@@ -38,13 +37,6 @@ public class MainActivity extends Activity {
             e.printStackTrace();
         }
 
-        //DataBase에 값을 입력
-        mDbOpenHelper.insertColumn("안찬웅", "01043558948", "Los Angeles");
-        mDbOpenHelper.insertColumn("김성준", "01029934214", "San Francisco");
-        mDbOpenHelper.insertColumn("이승기", "01090901010", "California");
-        mDbOpenHelper.insertColumn("서현규", "01028854183", "Colorado");
-        mDbOpenHelper.insertColumn("박기태", "01012341234", "Hawaii");
-        mDbOpenHelper.insertColumn("임용규", "01056785678", "Georgia");
 
         //ArrayList 초기화
         mInfoArr = new ArrayList<InfoClass>();
@@ -80,7 +72,7 @@ public class MainActivity extends Activity {
                     mAdapter.notifyDataSetChanged();
                 } else {
                     //잘못된 position을 가져왔을 경우 다시 확인 요청
-                    Toast.makeText(MainActivity.this, "INDEX를 확인해 주세요",
+                    Toast.makeText(DriverDBActivity.this, "INDEX를 확인해 주세요",
                             Toast.LENGTH_SHORT).show();
                 }
                 return false;

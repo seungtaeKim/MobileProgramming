@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class DriverActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.driver);
+        setContentView(R.layout.driver_main);
     }
     public void callClicked(View v){        //Call 버튼 눌렀을 시
         sendSMS("01043558948", "성공");   //문자 전송 메소드 호출
