@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">App_STaxi</string>
+    <string name="loading">loading</string>
+    <string name="Signed_Out">signed_out</string>
+    <string name="Signed_In_fmt">LoginTest</string>
+    <string name="facebook_app_id">532106416975820</string>
+</resources>

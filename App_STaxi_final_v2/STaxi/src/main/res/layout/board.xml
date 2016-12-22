@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:src="@drawable/help"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/imageView" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop ="400dp">
+
+        <EditText
+            android:id="@+id/mssg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint = "Enter Text"
+            android:inputType="textEmailAddress"/>
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:onClick="buttonClick"
+            android:text ="Send"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="435dp"
+        android:gravity="bottom">
+        <Button
+            android:id = "@+id/Location"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight ="1"
+            android:onClick="buttonClick"
+            android:background="@drawable/location"/>
+        <Button
+            android:id="@+id/Driver"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight ="1"
+            android:onClick="buttonClick"
+            android:background="@drawable/driver"/>
+        <Button
+            android:id="@+id/Fare"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight ="1"
+            android:onClick="buttonClick"
+            android:background="@drawable/fare"/>
+        <Button
+            android:id="@+id/Notice_board"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight ="1"
+            android:background="@drawable/notice_board"/>
+        <Button
+            android:id="@+id/Set_up"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight ="1"
+            android:onClick="buttonClick"
+            android:background="@drawable/set_up"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
